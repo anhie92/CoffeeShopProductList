@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CoffeeShop.Models.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Category List";
+}
+
+<h1>List</h1>
+
+
+@foreach (var item in Model.GroupBy(x => x.Category))
+{
+    <UL>
+        <LI>
+            @Html.ActionLink(item.Key, "Category", new { id = item.Key})
+        </LI>
+    </UL>
+
+   
+}

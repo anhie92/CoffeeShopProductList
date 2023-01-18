@@ -1,0 +1,17 @@
+﻿@model IEnumerable<CoffeeShop.Models.ProductViewModel>
+
+
+
+<h1>List</h1>
+
+
+@foreach (var item in Model)
+{
+    <UL>
+        <LI>
+            @Html.ActionLink(item.Name, "Details", new { id = item.Id })
+        </LI>
+    </UL>
+}
+
+
